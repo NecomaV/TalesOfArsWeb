@@ -13,26 +13,26 @@ function NavBar() {
                 <div className=" md:block  w-100">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-main gap-10">
                         <li className='flex items-center gap-2'>
-                            <a href="#" className="block py-2 px-3 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 dark:text-white md:dark:text-white-500" aria-current="page">Products</a>
+                            <a href="#" className="block py-2 px-3 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 " aria-current="page">Products</a>
                             <img src={product} alt="" />
                         </li>
                         <li className='flex items-center gap-2'>
-                            <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">DLC</a>
+                            <a href="#" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">DLC</a>
                             <img src={dlc} alt="" />
                         </li>
                         <li className='flex items-center gap-2'>
-                            <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
+                            <a href="#" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Blog</a>
                             <img src={blog} alt="" />
                         </li>
                         <li className='flex items-center gap-2'>
-                            <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Forum</a>
+                            <a href="#" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white ">Forum</a>
                             <img src={forum} alt="" />
                         </li>
 
                     </ul>
                 </div>
-                <a href="https://flowbite.com/" className="flex items-center justify-center w-100 space-x-3 rtl:space-x-reverse">
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tales of Arslan</span>
+                <a href="" className="flex items-center justify-center w-100 space-x-3 rtl:space-x-reverse">
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Arslan</span>
                 </a>
                 <div className="w-100 flex justify-center items-center gap-4">
                     <button className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded">
