@@ -34,14 +34,14 @@ function Login() {
                     <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
                         <div>
                           <label className="flex justify-between items-center bg-transparent border-white border text-white sm:text-sm rounded-lg w-full px-2.5">
-                            <img src={userImg} alt="" srcset="" />
+                            <img src={userImg} alt="" srcSet="" />
                             <input type="email" name="email" id="email" className=" bg-transparent  text-white sm:text-sm rounded-lg  block w-full p-2.5 focus:ring-red focus:ring-2 placeholder-white " placeholder="EMAIL" required="" onChange={handleChangeInput} value={email} />
                           </label>
                             
                         </div>
                         <div>
                         <label className="flex justify-between items-center bg-transparent border text-white sm:text-sm rounded-lg w-full px-2.5">
-                            <img src={lockImg} alt="" srcset="" />
+                            <img src={lockImg} alt="" srcSet="" />
                             <input 
                             type="password" 
                             name="password" 

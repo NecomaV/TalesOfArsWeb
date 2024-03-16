@@ -20,6 +20,7 @@ module.exports = {
         'sgbg': "url('img/sgbg.png')",
         'pxBg': "url('img/pxBg.png')",
         'BFT': "url('img/animation.gif')",
+        'loginBg': "url('img/loginBg.png')",
       },
       colors: {
         main: "#102542",
