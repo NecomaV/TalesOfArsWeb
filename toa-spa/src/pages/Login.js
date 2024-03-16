@@ -20,7 +20,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(login(userData))  
+    dispatch(login(userData))
   }
   return (
     <div className='bg-loginBg w-full h-screen bg-no-repeat bg-cover'>
