@@ -11,7 +11,7 @@ export const login = (data) => async (dispatch) => {
     try {
         res = await postDataAPI('login', data);
         
-        if (res.status === 200) { // Success
+        if (res.status === 200) { 
             await dispatch({
                 type: "AUTH",
                 payload: {
@@ -30,7 +30,7 @@ export const login = (data) => async (dispatch) => {
     
             console.log(res);
             return Promise.resolve(res);
-        } else { // Failure
+        } else { 
             dispatch({
                 type: 'NOTIFY',
                 payload: {
@@ -40,7 +40,7 @@ export const login = (data) => async (dispatch) => {
             return Promise.reject(res.data.msg)
         }
         
-    } catch (error) { // Network or server error
+    } catch (error) { 
         console.error('Error during login:', error);
         dispatch({
             type: 'NOTIFY',
@@ -57,8 +57,8 @@ export const login = (data) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   try {
     const res = await postDataAPI('logout');
-    if (res.status === 200) { // Success
-      // Reset auth state
+    if (res.status === 200) { 
+      
       dispatch({
         type: "AUTH",
         payload: {
@@ -67,17 +67,17 @@ export const logout = () => async (dispatch) => {
         }
       });
       
-      // Optionally, you can clear 'firstLogin' from local storage:
+      
       localStorage.removeItem('firstLogin');
 
-      // Notify user of successful logout
+     
       dispatch({
         type: "NOTIFY",
         payload: {
           success: res.data.msg
         }
       });
-    } else { // Failure
+    } else { 
       dispatch({
         type: 'NOTIFY',
         payload: {
@@ -93,5 +93,54 @@ export const logout = () => async (dispatch) => {
         error: 'An unexpected error occurred. Please try again.'
       }
     });
+  }
+}
+
+
+export const register = (data) => async (dispatch) => {
+  dispatch({ type: 'NOTIFY', payload: { loading: true } });
+
+  let res;
+  try {
+      res = await postDataAPI('register', data);
+      
+      if (res.status >= 200 && res.status < 300) {
+          await dispatch({
+              type: "AUTH",
+              payload: {
+                  token: res.data.access_token,
+                  user: res.data.user
+              }
+          });
+
+          localStorage.setItem('firstLogin', true);
+  
+          await dispatch({
+              type: "NOTIFY",
+              payload: {
+                  success: res.data.msg
+              }
+          });
+
+          return Promise.resolve(res);
+      } else {
+          dispatch({
+              type: 'NOTIFY',
+              payload: {
+                  error: res.data.msg
+              }
+          });
+
+          return Promise.reject(res.data.msg);
+      }
+  } catch (error) { 
+      dispatch({
+          type: 'NOTIFY',
+          payload: {
+              error: 'An unexpected error occurred. Please try again.'
+          }
+      });
+
+      return Promise.reject(error.message);
   }
 }

@@ -5,7 +5,7 @@ import { login } from '../redux/actions/authAction';
 import { useDispatch } from 'react-redux';
 import userEmail from '../img/user-email.svg';
 import lockImg from '../img/lock.png';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -17,8 +17,6 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { auth } = useSelector(state => state.auth);
-
-  console.log(auth); 
 
 useEffect(() => {
   if (auth && auth.token)

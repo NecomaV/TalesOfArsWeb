@@ -12,14 +12,6 @@ function NavBar() {
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        // This will be logged every time `auth.token` changes
-        if (auth.token) {
-          console.log("You are logged in.")
-        } else {
-          console.log("Please log in.")
-        }
-      }, [auth.token]);
     
     const handleLogout = () => {
       dispatch(logout());
