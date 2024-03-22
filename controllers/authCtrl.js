@@ -50,15 +50,22 @@ const authCtrl = {
     login: async (req, res) => {
         try {
             const { email, password } = req.body
+            console.log('Received login request with email:', email);
 
             const user = await Users.findOne({email})
             .populate("username fullname")
 
-            if(!user) return res.status(400).json({msg: "This email does not exist."})
+            if(!user){
+                console.log('User with email', email, 'not found.');
+                return res.status(400).json({msg: "This email does not exist."})
+            } 
 
             const isMatch = await bcrypt.compare(password, user.password)
-            if(!isMatch) return res.status(400).json({msg: "Password is incorrect."})
+            if(!isMatch){
+                console.log('Incorrect password for user with email', email);
+                return res.status(400).json({msg: "Password is incorrect."})
 
+            } 
             const access_token = createAccessToken({id: user._id})
             const refresh_token = createRefreshToken({id: user._id})
 
@@ -77,6 +84,7 @@ const authCtrl = {
                 }
             })
         } catch (err) {
+            console.error('Error during login:', err);
             return res.status(500).json({msg: err.message})
         }
     },

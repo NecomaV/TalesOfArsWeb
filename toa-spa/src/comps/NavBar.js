@@ -1,11 +1,29 @@
-import React from 'react'
+import React , { useContext, useEffect  }  from 'react'
 import product from '../img/diamond.png'
 import dlc from '../img/dlcicon.png'
 import blog from '../img/blogicon.png'
 import forum from '../img/forumicon.png'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { logout } from '../redux/actions/authAction'
+
 
 function NavBar() {
+    const auth = useSelector(state => state.auth);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        // This will be logged every time `auth.token` changes
+        if (auth.token) {
+          console.log("You are logged in.")
+        } else {
+          console.log("Please log in.")
+        }
+      }, [auth.token]);
+    
+    const handleLogout = () => {
+      dispatch(logout());
+    }
   return (
     <div>
         <nav className="flex justify-around items-center l mx-auto p-4 border-gray-200 bg-main">
@@ -35,14 +53,25 @@ function NavBar() {
                     <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Arslan</span>
                 </a>
                 <div className="w-100 flex justify-center items-center gap-4">
-                    <button className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded">
+                    <button className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded min-w-max">
                         Download Now
                     </button>
-                    <button className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded">
+                    {auth.token ? (
+                    <>
+                        <span className="text-white font-bold py-3 px-6 rounded min-w-max">
+                        Welcome, {auth.user && auth.user.fullname}
+                        </span>
+                        <button onClick={handleLogout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded">
+                        Logout
+                        </button>
+                    </>
+                    ) : (
+                    <button className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded min-w-max">
                         <Link to="/Login" >Join Now</Link>
                     </button>
+                    )}
                 </div>
-                
+                                                    
 
                 {/* <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
                     <span className="sr-only">Open main menu</span>

@@ -10,7 +10,6 @@ function Pagerender() {
         try {
             return React.createElement(component())
         } catch (err) {
-            console.warn(err)
             return <NotFound />
         }
     }

@@ -21,6 +21,7 @@ module.exports = {
         'pxBg': "url('img/pxBg.png')",
         'BFT': "url('img/animation.gif')",
         'loginBg': "url('img/loginBg.png')",
+        'spinner' : "url('img/Spinner.svg')",
       },
       colors: {
         main: "#102542",
