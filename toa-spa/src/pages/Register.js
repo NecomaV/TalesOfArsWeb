@@ -39,31 +39,30 @@ function Register() {
         username,
         email,
         password,
-        gender: 'Male', // or Female as per your form design
+        gender: 'Male', 
       };
     
       dispatch(register(newUser))
       .then(res => {
-        setMessage('Registration successful!'); // Add success message
+        setMessage('Registration successful!'); 
         setFormData({
           username: '',
           email: '',
           password: '',
           confirmPass: '',
-        }); // Clear form fields
+        }); 
     
-        // Remove success message after 1 second
         setTimeout(() => {
           setMessage('');
         }, 5000);
     
-        // handle successful registration (e.g. navigate to login page)
+       
       })
       .catch(err => {
-        setMessage(''); // Clear success message
-        setErrorMessage(err); // Set error message
+        setMessage(''); 
+        setErrorMessage(err); 
         
-        // Remove error message after 3 seconds
+        
         setTimeout(() => {
           setErrorMessage('');
         }, 3000);
