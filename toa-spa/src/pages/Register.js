@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import userImg from '../img/user.png';
 import userEmail from '../img/user-email.svg';
 import lockImg from '../img/lock.png';
@@ -10,9 +10,9 @@ import { useDispatch } from 'react-redux';
 
 function Register() {
 
-  const [message, setMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-
+    const [message, setMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         username: '',
@@ -44,29 +44,32 @@ function Register() {
     
       dispatch(register(newUser))
       .then(res => {
-        setMessage('Registration successful!'); 
+        if (res && res.success) {
+          setMessage('Registration successful!');
+          setTimeout(() => {
+            navigate('/Login');
+          }, 3000);
+        }
+      
         setFormData({
           username: '',
           email: '',
           password: '',
           confirmPass: '',
         }); 
-    
+      
         setTimeout(() => {
           setMessage('');
         }, 5000);
-    
-       
       })
       .catch(err => {
         setMessage(''); 
         setErrorMessage(err); 
-        
-        
+            
         setTimeout(() => {
           setErrorMessage('');
         }, 3000);
-    });
+      });
     
   };
 
