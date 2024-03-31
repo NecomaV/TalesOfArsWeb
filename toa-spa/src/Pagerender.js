@@ -1,5 +1,5 @@
 import React from 'react'
-import { generatePath, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import NotFound from './comps/NotFound'
 
 function Pagerender() {

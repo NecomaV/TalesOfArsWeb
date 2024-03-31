@@ -1,5 +1,4 @@
 import React from 'react'
-import sgbg from '../img/sgbg.png'
 
 function Sg() {
   return (

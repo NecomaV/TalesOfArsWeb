@@ -22,11 +22,13 @@ module.exports = {
         'BFT': "url('img/animation.gif')",
         'loginBg': "url('img/loginBg.png')",
         'spinner' : "url('img/Spinner.svg')",
+        'dlc': "url('img/dlc-bg.png')",
       },
       colors: {
         main: "#102542",
         butg: "#628b48",
         bgfourm: "#26282e",
+        change: "#bfd1be",
       },
       backdropBrightness: {
         60: "60%",

@@ -6,47 +6,65 @@ import forum from '../img/forumicon.png'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../redux/actions/authAction'
-
+import { useLocation } from 'react-router-dom';
+import classnames from 'classnames';
 
 function NavBar() {
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
-    
+    const { pathname } = useLocation();
+
+    const navbarClasses = classnames({
+      'bg-change': pathname === '/DLC',
+      'bg-main': pathname === '/' && pathname !== '/Blog'
+    });
+    const textClasses = classnames({
+        'text-main': pathname === '/DLC',
+        'text-white': pathname === '/' && pathname !== '/Blog'
+      });
+      
+   
     const handleLogout = () => {
       dispatch(logout());
     }
   return (
     <div>
-        <nav className="flex justify-around items-center l mx-auto p-4 border-gray-200 bg-main">
+        <nav className={`flex bg- justify-around items-center l mx-auto p-4 border-gray-200 ${navbarClasses}`}>
 
                 <div className=" md:block  w-100">
-                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-main gap-10">
+                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-transparent gap-10">
                         <li className='flex items-center gap-2'>
-                            <p  className="block py-2 px-3 text-white bg- rounded md:bg-transparent md:text-white-700 md:p-0 " aria-current="page">Products</p>
+                        <Link to="/" className='flex items-center gap-2' >
+                            <p  className={`block py-2 px-3 ${textClasses} bg- rounded bg-transparent md:p-0`}aria-current="page">Products</p>
                             <img src={product} alt="" />
+                        </Link>
+
                         </li>
                         <li className='flex items-center gap-2'>
                             <button className='flex items-center gap-2'>
                             <Link to="/DLC" className='flex items-center gap-2'>
-                                <p className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">DLC</p>
+                                <p className={`block py-2 px-3 ${textClasses} bg- rounded bg-transparent md:p-0`}>DLC</p>
                                 <img src={dlc} alt="" />
                             </Link>
                             </button>
                         </li>
                         <li className='flex items-center gap-2'>
-                            <p href="#" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Blog</p>
+                        <Link to="/Blog" className='flex items-center gap-2'>
+                            <p href="#" className={`block py-2 px-3 ${textClasses} bg- rounded bg-transparent md:p-0`}>Blog</p>
                             <img src={blog} alt="" />
+                            </Link>
+
                         </li>
                         <li className='flex items-center gap-2'>
-                            <p href="#" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white ">Forum</p>
+                            <p href="#" className={`block py-2 px-3 ${textClasses} bg- rounded bg-transparent md:p-0`}>Forum</p>
                             <img src={forum} alt="" />
                         </li>
 
                     </ul>
                 </div>
                 <p href="" className="flex items-center justify-center w-100 space-x-3 rtl:space-x-reverse">
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Arslan</span>
+                    <span className={`self-center text-2xl font-semibold whitespace-nowrap ${textClasses}`}>Tales of Arslan</span>
                 </p>
                 <div className="w-100 flex justify-center items-center gap-4">
                     <button className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded min-w-max">
@@ -54,7 +72,7 @@ function NavBar() {
                     </button>
                     {auth.token ? (
                     <>
-                        <span className="text-white font-bold py-3 px-6 rounded min-w-max">
+                        <span className={`${textClasses} font-bold py-3 px-6 rounded min-w-max`}>
                         Welcome, {auth.user && auth.user.fullname}
                         </span>
                         <button onClick={handleLogout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded">
