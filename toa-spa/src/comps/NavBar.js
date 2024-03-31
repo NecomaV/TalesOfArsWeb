@@ -16,21 +16,23 @@ function NavBar() {
     const { pathname } = useLocation();
 
     const navbarClasses = classnames({
-      'bg-change': pathname === '/DLC',
-      'bg-main': pathname === '/' && pathname !== '/Blog'
+        'bg-change': pathname === '/DLC',
+        'bg-main': pathname === '/',
+        'bg-main': pathname === '/Blog'
     });
+
     const textClasses = classnames({
         'text-main': pathname === '/DLC',
-        'text-white': pathname === '/' && pathname !== '/Blog'
-      });
+        'text-white': pathname === '/',
+        'text-slate-50': pathname === '/Blog'
+    });
       
-   
     const handleLogout = () => {
       dispatch(logout());
     }
   return (
     <div>
-        <nav className={`flex bg- justify-around items-center l mx-auto p-4 border-gray-200 ${navbarClasses}`}>
+        <nav className={`flex bg- justify-around items-center  mx-auto p-4 border-gray-200 ${navbarClasses}`}>
 
                 <div className=" md:block  w-100">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-transparent gap-10">
