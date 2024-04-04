@@ -1,6 +1,11 @@
 import React from 'react'
 
 function Footer() {
+    const downloadUrl = "https://drive.google.com/uc?export=download&id=1a9NmQL4J8O9sWPKinlu_CvvA3fflWGK2";
+    const handleDownload = () => {
+        window.location.href = downloadUrl;
+      }
+
   return (
     <div>
         <footer className="bg-gray-900 ">
@@ -13,7 +18,7 @@ function Footer() {
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Arslan</span>
                     </a>
                     <div className="w-100 flex justify-center items-center ">
-                        <button className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded">
+                        <button onClick={handleDownload} className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded">
                             Download Now
                         </button>
                     </div>

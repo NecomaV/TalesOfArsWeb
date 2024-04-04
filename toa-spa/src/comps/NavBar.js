@@ -13,6 +13,11 @@ function NavBar() {
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
+    const downloadUrl = "https://drive.google.com/uc?export=download&id=1a9NmQL4J8O9sWPKinlu_CvvA3fflWGK2";
+    const handleDownload = () => {
+        window.location.href = downloadUrl;
+      }
+
     const { pathname } = useLocation();
 
     const navbarClasses = classnames({
@@ -69,7 +74,7 @@ function NavBar() {
                     <span className={`self-center text-2xl font-semibold whitespace-nowrap ${textClasses}`}>Tales of Arslan</span>
                 </p>
                 <div className="w-100 flex justify-center items-center gap-4">
-                    <button className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded min-w-max">
+                    <button onClick={handleDownload} className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded min-w-max">
                         Download Now
                     </button>
                     {auth.token ? (
