@@ -1,6 +1,6 @@
-// const Users = require('../models/userModel')
-// const bcrypt = require('bcrypt')
-// const jwt = require('jsonwebtoken')
+const Users = require('../models/userModel')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
  
 // const authCtrl = {
 //     register: async (req, res) => {
