@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(
     {
-        origin: ['https://tails-of-arslan-web.versel.app'],
+        origin: ['https://tales-of-ars-web.versel.app'],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         credentials: true
     }
