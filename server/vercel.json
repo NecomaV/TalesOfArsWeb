@@ -1,12 +1,4 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "*.js", "use": "@versel/node"
-        }
-    ],
-    "routes": [
+    "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 
-        { "src": "/(.*)", "dest": "/" }
-    ]
 }
