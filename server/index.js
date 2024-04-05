@@ -22,7 +22,7 @@ mongoose.connect(URI, {
 })
 .then(() => {
     console.log('Connected to MongoDB');
-    
+    app.listen(3000, () => console.log("Server ready on port 3000."));
 })
 .catch((error) => {
     console.error('Error connecting to MongoDB:', error);
