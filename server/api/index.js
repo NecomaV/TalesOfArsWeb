@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
     res.json({ message: 'Welcome to the server' });
 });
 
-app.use('/api', require('./routes/authRouter'));
+// Temporarily comment out the auth router usage
+// app.use('/api', require('./routes/authRouter'));
 
 module.exports = app;
