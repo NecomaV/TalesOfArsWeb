@@ -10,14 +10,14 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-const buildPath = path.join(__dirname, '../TalesOfArsWeb/toa-spa/build');
+const buildPath = path.resolve(__dirname, '../toa-spa/build');
 
 app.use(express.static(buildPath));
 
 app.get('*', (req, res) => {
   res.sendFile(
     // Updated the path
-    path.join(__dirname, '../TalesOfArsWeb/toa-spa/build/index.html'),
+    path.resolve(__dirname, '../toa-spa/build/index.html'),
     function (err) {   
       if (err) {
         res.status(500).send(err)
