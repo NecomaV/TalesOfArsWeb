@@ -14,7 +14,7 @@ function Footer() {
                     <div className=" md:block  w-100">
                     <span className="flex text-sm text-gray-500 sm:text-center ">© 2024 Casablanca All Rights Reserved.</span>
                     </div>
-                    <a href="h" className="flex items-center justify-center w-100 space-x-3 rtl:space-x-reverse">
+                    <a href="/" className="flex items-center justify-center w-100 space-x-3 rtl:space-x-reverse">
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Arslan</span>
                     </a>
                     <div className="w-100 flex justify-center items-center ">
