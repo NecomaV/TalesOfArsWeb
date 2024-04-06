@@ -10,18 +10,17 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-const __dirname = path.dirname("")
-const buildPath = path.join(__dirname, "../toa-spa/build");
+const buildPath = path.join(__dirname, '../toa-spa/build');
 
 app.use(express.static(buildPath));
 
-app.get("/*", (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../toa-spa/build/index.html"),
+    path.join(__dirname, '../toa-spa/build/index.html'),
     function (err) {   
-        if (err) {
-            res.status(500).send(err)
-        }
+      if (err) {
+        res.status(500).send(err)
+      }
     }
   );
 });
