@@ -22,23 +22,20 @@ app.get("/", (req, res) => {
 
 app.use('/api', require('./routes/authRouter'));
 
-const URI = process.env.MONGODB_URL;
+const URI = process.env.MONGODB_URI;
 
 if (!URI) {
     console.log('Error: MONGODB_URI is not set');
     process.exit(1);
 }
 
-// Attempt to connect to MongoDB
 mongoose.connect(URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
+  useUnifiedTopology: true
 })
   .then(() => {
     console.log('Connected to MongoDB');
 
-    // Start Express server after successful database connection
     app.listen(process.env.PORT || 3000, () => console.log("Server ready on port 3000."));
   })
   .catch((error) => {
@@ -46,6 +43,4 @@ mongoose.connect(URI, {
     process.exit(1); // Exit the process if unable to connect to MongoDB
   });
 
-
 module.exports = app;
-
