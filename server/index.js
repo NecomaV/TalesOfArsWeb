@@ -24,6 +24,11 @@ app.use('/api', require('./routes/authRouter'));
 
 const URI = process.env.MONGODB_URL;
 
+if (!URI) {
+    console.log('Error: MONGODB_URI is not set');
+    process.exit(1);
+}
+
 // Attempt to connect to MongoDB
 mongoose.connect(URI, {
   useNewUrlParser: true,
