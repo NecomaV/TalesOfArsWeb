@@ -10,15 +10,17 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
+app.use(express.static(path.join(__dirname, '../toa-spa/build'))); 
+
 app.get("/", (req, res) => {
-    res.sendFile(
-        path.join(__dirname, "../toa-spa/build/index.html"),
-        function (err) {
-            if (err) {
-                res.status(500).send(err);
-            }
-        }
-    )
+  res.sendFile(
+    path.join(__dirname, "../toa-spa/build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  )
 });
 
 app.use('/api', require('./routes/authRouter'));
