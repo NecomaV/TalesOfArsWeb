@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7e6c347f.css",
+    "main.js": "/static/js/main.f45bff3c.js",
+    "static/media/animation.gif": "/static/media/animation.31fe258845de2cb6a99f.gif",
+    "static/media/pxBg.png": "/static/media/pxBg.e703e78a515bf6b6d000.png",
+    "static/media/hero.png": "/static/media/hero.db1e736de835a8ad9392.png",
+    "static/media/long.png": "/static/media/long.0c4887ddd420f38ef762.png",
+    "static/media/dlc-bg.png": "/static/media/dlc-bg.d86081d3bd5b42abd3b4.png",
+    "static/media/longb-2.png": "/static/media/longb-2.2395e438893a9bd0f3a9.png",
+    "static/media/longb-1.png": "/static/media/longb-1.6196bb449a661984c2c9.png",
+    "static/media/char.png": "/static/media/char.86cd5e8ed24b991c6a7f.png",
+    "static/media/loginBg.png": "/static/media/loginBg.14f0fde358b44c111589.png",
+    "static/media/sgbg.png": "/static/media/sgbg.48bab0875522fe69e6e5.png",
+    "static/media/Spinner.svg": "/static/media/Spinner.5c744310876cf634c70a.svg",
+    "index.html": "/index.html",
+    "static/media/user-email.svg": "/static/media/user-email.8e4172759f35abd684647a8d17532035.svg",
+    "main.7e6c347f.css.map": "/static/css/main.7e6c347f.css.map",
+    "main.f45bff3c.js.map": "/static/js/main.f45bff3c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e6c347f.css",
+    "static/js/main.f45bff3c.js"
+  ]
+}
