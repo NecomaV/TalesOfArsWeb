@@ -37,9 +37,9 @@ function NavBar() {
     }
   return (
     <div>
-        <nav className={`flex bg- justify-around items-center  mx-auto p-4 border-gray-200 ${navbarClasses}`}>
+        <nav className={`flex flex-col 990:flex-row justify-around items-center  mx-auto p-4 border-gray-200 ${navbarClasses}`}>
 
-                <div className=" md:block  w-100">
+                <div className=" md:block w-100">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-transparent gap-10">
                         <li className='flex items-center gap-2'>
                         <Link to="/" className='flex items-center gap-2' >
@@ -62,10 +62,6 @@ function NavBar() {
                             <img src={blog} alt="" />
                             </Link>
 
-                        </li>
-                        <li className='flex items-center gap-2'>
-                            <p href="#" className={`block py-2 px-3 ${textClasses} bg- rounded bg-transparent md:p-0`}>Forum</p>
-                            <img src={forum} alt="" />
                         </li>
 
                     </ul>

@@ -4,7 +4,7 @@ import heroimg from '../img/hero.png'
 function Hero() {
   return (
     <div className='mt-7 '>
-        <div className="h-600 w-full flex items-center justify-center">
+        <div className="h-full w-full flex items-center justify-center">
             <img src={heroimg} alt="" />
         </div>
         <div className="w-full flex flex-col items-center justify-center p-3 mt-16 ">

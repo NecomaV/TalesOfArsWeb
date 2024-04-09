@@ -46,6 +46,9 @@ module.exports = {
         57: "57%",
 
       },
+      screens : {
+        '990': '990ox',
+      },
     },
   },
   plugins: [],
