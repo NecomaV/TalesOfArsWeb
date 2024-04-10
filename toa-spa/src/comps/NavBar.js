@@ -13,7 +13,8 @@ function NavBar() {
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
-    const downloadUrl = "https://drive.google.com/uc?export=download&id=1ezGiMkMVaLxutAt_WPIYWa9zTq42Ss2_";
+    const downloadUrl = "https://drive.google.com/uc?export=download&id=1WSyn4_DzymurOrrSKbZUyF18BG-pQkh-";
+
     const handleDownload = () => {
         window.location.href = downloadUrl;
       }
