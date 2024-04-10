@@ -13,7 +13,7 @@ function NavBar() {
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
-    const downloadUrl = "https://drive.google.com/uc?export=download&id=1a9NmQL4J8O9sWPKinlu_CvvA3fflWGK2";
+    const downloadUrl = "https://drive.google.com/uc?export=download&id=1ezGiMkMVaLxutAt_WPIYWa9zTq42Ss2_";
     const handleDownload = () => {
         window.location.href = downloadUrl;
       }
@@ -37,10 +37,10 @@ function NavBar() {
     }
   return (
     <div>
-        <nav className={`flex flex-col 990:flex-row justify-around items-center  mx-auto p-4 border-gray-200 ${navbarClasses}`}>
+        <nav className={`flex flex-col 990:flex-row gap-10 990:gap-1 justify-around items-center  mx-auto p-4 border-gray-200 ${navbarClasses}`}>
 
-                <div className=" md:block w-100">
-                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-transparent gap-10">
+                <div className=" md:block sm:w-100">
+                    <ul className="font-medium items-center flex flex-col p-0 md:p-0 mt-4   rounded-lg  md:flex-row   md:mt-0 md:border-0 bg-transparent gap-10">
                         <li className='flex items-center gap-2'>
                         <Link to="/" className='flex items-center gap-2' >
                             <p  className={`block py-2 px-3 ${textClasses} bg- rounded bg-transparent md:p-0`}aria-current="page">Products</p>
@@ -66,10 +66,10 @@ function NavBar() {
 
                     </ul>
                 </div>
-                <p href="" className="flex items-center justify-center w-100 space-x-3 rtl:space-x-reverse">
+                <p href="" className="flex items-center justify-center sm:w-100 space-x-3 rtl:space-x-reverse">
                     <span className={`self-center text-2xl font-semibold whitespace-nowrap ${textClasses}`}>Tales of Arslan</span>
                 </p>
-                <div className="w-100 flex justify-center items-center gap-4">
+                <div className="sm:w-100 flex flex-col 364:flex-row justify-center items-center gap-4">
                     <button onClick={handleDownload} className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded min-w-max">
                         Download Now
                     </button>

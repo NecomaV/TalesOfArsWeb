@@ -4,10 +4,13 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'tablet': '640px',
+        '364': '364px',
+        '428': '428px',
+        '706': '706px',
         '990': '990px',
-        'laptop': '1024px',
-        'desktop': '1280px',
+        '1089': '1089px',
+        '1383': '1383px',
+
       },
       width: {
         100: "400px",

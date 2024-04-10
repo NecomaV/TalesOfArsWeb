@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Footer() {
-    const downloadUrl = "https://drive.google.com/uc?export=download&id=1a9NmQL4J8O9sWPKinlu_CvvA3fflWGK2";
+    const downloadUrl = "https://drive.google.com/uc?export=download&id=1ezGiMkMVaLxutAt_WPIYWa9zTq42Ss2_";
     const handleDownload = () => {
         window.location.href = downloadUrl;
       }
@@ -10,14 +10,14 @@ function Footer() {
     <div>
         <footer className="bg-gray-900 ">
             <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-                <div className="flex items-center">
-                    <div className=" md:block  w-100">
-                    <span className="flex text-sm text-gray-500 sm:text-center ">© 2024 Casablanca All Rights Reserved.</span>
+                <div className="flex flex-col sm:flex-row gap-5  items-center">
+                    <div className=" md:block  sm:w-100">
+                    <span className="flex  text-sm text-gray-500 text-center ">© 2024 Casablanca All Rights Reserved.</span>
                     </div>
-                    <a href="/" className="flex items-center justify-center w-100 space-x-3 rtl:space-x-reverse">
+                    <a href="/" className="flex items-center justify-center sm:w-100 space-x-3 rtl:space-x-reverse">
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Arslan</span>
                     </a>
-                    <div className="w-100 flex justify-center items-center ">
+                    <div className="sm:w-100 flex justify-center items-center ">
                         <button onClick={handleDownload} className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded">
                             Download Now
                         </button>
@@ -27,7 +27,7 @@ function Footer() {
                 <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
          
-                    ``<div className="flex mt-4 sm:justify-center sm:mt-0">
+                    <div className="flex  mt-4 sm:justify-center sm:mt-0">
                         <a href="/asda" className="text-gray-500 hover:text-white ">
                             <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                                     <path fillRule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clipRule="evenodd"/>
