@@ -23,7 +23,7 @@ function Blog() {
                         <p  className="text-sm pb-3">
                             By <span  className="font-semibold hover:text-gray-800">Jangir</span>, Published on April 25th, 2024
                         </p>
-                        <p  className="pb-6">LThe core concept of this game stems from a deep desire to bring attention to Kazakhstan's rich cultural tapestry and its often overlooked beauty. We aim to create an immersive experience that not only entertains but also educates players about the diverse landscapes, traditions, and folklore that define our country.</p>
+                        <p  className="pb-6">The core concept of this game stems from a deep desire to bring attention to Kazakhstan's rich cultural tapestry and its often overlooked beauty. We aim to create an immersive experience that not only entertains but also educates players about the diverse landscapes, traditions, and folklore that define our country.</p>
                         
                     </div>
                 </article>
