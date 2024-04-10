@@ -40,7 +40,7 @@ function DLC() {
                             DLC 1
                           </td>
                           <td className="px-6 py-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...
+                            Coming soon...
                           </td>
                           <td className="px-6 py-4">
                               3.5
@@ -57,7 +57,7 @@ function DLC() {
                             DLC 2
                           </td>
                           <td className="px-6 py-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...
+                            Coming soon...
                           </td>
                           <td className="px-6 py-4">
                               4.5
@@ -74,7 +74,7 @@ function DLC() {
                             DLC 3
                           </td>
                           <td className="px-6 py-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...
+                            Coming soon...
                           </td>
                           <td className="px-6 py-4">
                               3.3
@@ -91,7 +91,7 @@ function DLC() {
                             DLC 4
                           </td>
                           <td className="px-6 py-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...
+                            Coming soon...
                           </td>
                           <td className="px-6 py-4">
                               5.0
@@ -108,7 +108,7 @@ function DLC() {
                             DLC 5
                           </td>
                           <td className="px-6 py-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...
+                            Coming soon...
                           </td>
                           <td className="px-6 py-4">
                               4.2
@@ -125,7 +125,7 @@ function DLC() {
                             DLC 6
                           </td>
                           <td className="px-6 py-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...
+                            Coming soon...
                           </td>
                           <td className="px-6 py-4">
                               3.6
@@ -142,7 +142,7 @@ function DLC() {
                             DLC 7
                           </td>
                           <td className="px-6 py-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...
+                            Coming soon...
                           </td>
                           <td className="px-6 py-4">
                               1.  5
