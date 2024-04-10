@@ -69,7 +69,7 @@ function NavBar() {
                 <p href="" className="flex items-center justify-center sm:w-100 space-x-3 rtl:space-x-reverse">
                     <span className={`self-center text-2xl font-semibold whitespace-nowrap ${textClasses}`}>Tales of Arslan</span>
                 </p>
-                <div className="sm:w-100 flex flex-col 364:flex-row justify-center items-center gap-4">
+                <div className="sm:w-100 flex flex-col md:flex-row justify-center items-center gap-4">
                     <button onClick={handleDownload} className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded min-w-max">
                         Download Now
                     </button>
