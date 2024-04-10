@@ -19,11 +19,11 @@ function Blog() {
                     </p>
                     <div className="bg-white flex flex-col justify-start p-6">
                         <p  className="text-fuchsia-800 text-sm font-bold uppercase pb-4">Storyline</p>
-                        <p  className="text-3xl font-bold hover:text-gray-700 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</p>
+                        <p  className="text-3xl font-bold hover:text-gray-700 pb-4">Main idea of a game?</p>
                         <p  className="text-sm pb-3">
                             By <span  className="font-semibold hover:text-gray-800">Jangir</span>, Published on April 25th, 2024
                         </p>
-                        <p  className="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</p>
+                        <p  className="pb-6">LThe core concept of this game stems from a deep desire to bring attention to Kazakhstan's rich cultural tapestry and its often overlooked beauty. We aim to create an immersive experience that not only entertains but also educates players about the diverse landscapes, traditions, and folklore that define our country.</p>
                         
                     </div>
                 </article>
@@ -33,12 +33,12 @@ function Blog() {
                         <img alt='img' src={img2}/>
                     </p>
                     <div className="bg-white flex flex-col justify-start p-6">
-                        <p  className="text-fuchsia-800 text-sm font-bold uppercase pb-4">Automotive, Finance</p>
-                        <p  className="text-3xl font-bold hover:text-gray-700 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</p>
+                        <p  className="text-fuchsia-800 text-sm font-bold uppercase pb-4">Game PLay</p>
+                        <p  className="text-3xl font-bold hover:text-gray-700 pb-4">What is gonna be shown?</p>
                         <p  className="text-sm pb-3">
                             By <span  className="font-semibold hover:text-gray-800">Tima</span>, Published on March 12th, 2024
                         </p>
-                        <p  className="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</p>
+                        <p  className="pb-6">Through engaging gameplay and interactive storytelling, players will embark on a journey that highlights the unique aspects of Kazakhstan's heritage. From the sweeping steppes to the majestic mountains, each location will be meticulously crafted to capture the essence of our land.</p>
                         
                     </div>
                 </article>
@@ -48,12 +48,12 @@ function Blog() {
                         <img alt='img' className=' ' src={img3}/>
                     </p>
                     <div className="bg-white flex flex-col justify-start p-6">
-                        <p  className="text-fuchsia-800 text-sm font-bold uppercase pb-4">Sports</p>
-                        <p  className="text-3xl font-bold hover:text-gray-700 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</p>
+                        <p  className="text-fuchsia-800 text-sm font-bold uppercase pb-4">Aspects</p>
+                        <p  className="text-3xl font-bold hover:text-gray-700 pb-4">Game aspects</p>
                         <p  className="text-sm pb-3">
                             By <span  className="font-semibold hover:text-gray-800">Gaba</span>, Published on March 22nd, 2024
                         </p>
-                        <p className="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</p>
+                        <p className="pb-6">Quests and challenges will be intricately woven into the fabric of Kazakh culture, allowing players to explore traditions, interact with NPCs representing different ethnic groups, and uncover the myths and legends that have shaped our history.</p>
                         
                     </div>
                 </article>
