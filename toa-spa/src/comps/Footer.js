@@ -15,7 +15,7 @@ function Footer() {
                     <span className="flex  text-sm text-gray-500 text-center ">© 2024 Casablanca All Rights Reserved.</span>
                     </div>
                     <a href="/" className="flex items-center justify-center sm:w-100 space-x-3 rtl:space-x-reverse">
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Arslan</span>
+                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Aryslan</span>
                     </a>
                     <div className="sm:w-100 flex justify-center items-center ">
                         <button onClick={handleDownload} className="bg-indigo-900 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded">
