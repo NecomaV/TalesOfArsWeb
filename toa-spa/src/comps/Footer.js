@@ -12,7 +12,7 @@ function Footer() {
             <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                 <div className="flex flex-col sm:flex-row gap-5  items-center">
                     <div className=" md:block  sm:w-100">
-                    <span className="flex  text-sm text-gray-500 text-center ">© 2024 Casablanca All Rights Reserved.</span>
+                    <span className="flex  text-sm text-gray-500 text-center ">For bug repors write here: teamcasablanca2024@gmail.com</span>
                     </div>
                     <a href="/" className="flex items-center justify-center sm:w-100 space-x-3 rtl:space-x-reverse">
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Tales of Aryslan</span>
