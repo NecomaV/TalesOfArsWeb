@@ -14,7 +14,6 @@ function NavBar() {
     const dispatch = useDispatch();
 
     const downloadUrl = "https://drive.google.com/uc?export=download&id=1WSyn4_DzymurOrrSKbZUyF18BG-pQkh-";
-
     const handleDownload = () => {
         window.location.href = downloadUrl;
       }
