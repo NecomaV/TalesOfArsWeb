@@ -10,69 +10,82 @@ import { useDispatch } from 'react-redux';
 
 function Register() {
 
-    const [message, setMessage] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        confirmPass: ''
-    });
+ // Define state for success and error messages
+const [message, setMessage] = useState('');
+const [errorMessage, setErrorMessage] = useState('');
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+// Initialize hooks for dispatch and navigation
+const navigate = useNavigate();
+const dispatch = useDispatch();
 
-    const handleSubmit = async (e) => {
+// Define state for form data
+const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPass: ''
+});
 
-      e.preventDefault();
-      const { username, email, password, confirmPass } = formData;
-      if(password !== confirmPass){
+// Handle change event for all input fields
+const handleChange = (e) => {
+    // Update form data state with new values
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
+// Handle form submission
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { username, email, password, confirmPass } = formData;
+
+    // Check if passwords match
+    if(password !== confirmPass){
         alert("Passwords don't match!");
         return;
-      }
-    
-      const newUser = {
+    }
+
+    const newUser = {
         fullname: username,
         username,
         email,
         password,
-        gender: 'Male', 
-      };
-    
-      dispatch(register(newUser))
-      .then(res => {
-        if (res && res.success) {
-          setMessage('Registration successful!');
-          setTimeout(() => {
-            navigate('/Login');
-          }, 3000);
-        }
-      
-        setFormData({
-          username: '',
-          email: '',
-          password: '',
-          confirmPass: '',
-        }); 
-      
-        setTimeout(() => {
-          setMessage('');
-        }, 5000);
-      })
-      .catch(err => {
-        setMessage(''); 
-        setErrorMessage(err); 
-            
-        setTimeout(() => {
-          setErrorMessage('');
-        }, 3000);
-      });
-    
-  };
+        gender: 'Male',
+    };
 
+    // Dispatch the register action with the user
+    dispatch(register(newUser))
+        .then(res => {
+            if (res && res.success) {
+
+                // Message for successful registration and navigation to login page
+                setMessage('Registration successful!');
+                setTimeout(() => {
+                    navigate('/Login');
+                }, 3000);
+            }
+        
+            // Reset the form fields
+            setFormData({
+                username: '',
+                email: '',
+                password: '',
+                confirmPass: '',
+            }); 
+        
+            // Clear the success message
+            setTimeout(() => {
+                setMessage('');
+            }, 5000);
+        })
+        .catch(err => {
+            // Set the error message and clear after sometime
+            setMessage(''); 
+            setErrorMessage(err); 
+                
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 3000);
+        });
+};
     return (
     <div className='bg-loginBg w-full h-screen bg-no-repeat bg-cover'>
         <section>

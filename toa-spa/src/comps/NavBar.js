@@ -10,30 +10,38 @@ import { useLocation } from 'react-router-dom';
 import classnames from 'classnames';
 
 function NavBar() {
-    const auth = useSelector(state => state.auth);
-    const dispatch = useDispatch();
+   // import Redux hooks
+    const auth = useSelector(state => state.auth); // Accessing auth state
+    const dispatch = useDispatch(); // To dispatch actions
 
+    // Define the download URL
     const downloadUrl = "https://drive.google.com/uc?export=download&id=1WSyn4_DzymurOrrSKbZUyF18BG-pQkh-";
-    const handleDownload = () => {
-        window.location.href = downloadUrl;
-      }
 
+    // Function to handle download
+    const handleDownload = () => {
+        window.location.href = downloadUrl; // Navigate to download URL
+    }
+
+    // Extract the current path from the location object from the router
     const { pathname } = useLocation();
 
+    // Dynamically assign classes based on the `pathname`
     const navbarClasses = classnames({
-        'bg-change': pathname === '/DLC',
-        'bg-main': pathname === '/',
-        'bg-main': pathname === '/Blog'
+        'bg-change': pathname === '/DLC', // Change to bg-change if pathname is /DLC
+        'bg-main': pathname === '/', // Change to bg-main if pathname is /
+        'bg-main': pathname === '/Blog' // Change to bg-main if pathname is /Blog
     });
 
+    //Dynamically assign classes based on the `pathname`
     const textClasses = classnames({
-        'text-main': pathname === '/DLC',
-        'text-white': pathname === '/',
-        'text-slate-50': pathname === '/Blog'
+        'text-main': pathname === '/DLC', // Change to text-main if pathname is /DLC
+        'text-white': pathname === '/', // Change to text-white if pathname is /
+        'text-slate-50': pathname === '/Blog' // Change to text-slate-50 if pathname is /Blog
     });
-      
+
+    // Function to handle logout
     const handleLogout = () => {
-      dispatch(logout());
+        dispatch(logout()); // Dispatch a logout action
     }
   return (
     <div>

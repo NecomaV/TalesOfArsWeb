@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Define a function to perform GET requests
 export const getDataAPI = async (url, token) => {
     const res = await axios.get(`/api/${url}`, {
         headers: { Authorization: token}
@@ -7,6 +8,7 @@ export const getDataAPI = async (url, token) => {
     return res;
 }
 
+// Define a function to perform POST requests
 export const postDataAPI = async (url, post, token) => {
     let res;
     try {
@@ -24,6 +26,7 @@ export const postDataAPI = async (url, post, token) => {
     return res;
 };
 
+// Define a function to perform PUT requests
 export const putDataAPI = async (url, post, token) => {
     const res = await axios.put(`/api/${url}`, post, {
         headers: { Authorization: token}
@@ -31,6 +34,7 @@ export const putDataAPI = async (url, post, token) => {
     return res;
 }
 
+// Define a function to perform PATCH requests
 export const patchDataAPI = async (url, post, token) => {
     const res = await axios.patch(`/api/${url}`, post, {
         headers: { Authorization: token}
@@ -38,6 +42,7 @@ export const patchDataAPI = async (url, post, token) => {
     return res;
 }
 
+// Define a function to perform DELETE requests
 export const deleteDataAPI = async (url, token) => {
     const res = await axios.delete(`/api/${url}`, {
         headers: { Authorization: token}

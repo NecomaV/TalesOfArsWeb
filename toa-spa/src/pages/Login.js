@@ -10,33 +10,49 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 function Login() {
-  const initialState = { email: '', password: '' };
-  const [userData, setUserData] = useState(initialState);
-  const { email, password } = userData;
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { auth } = useSelector(state => state.auth);
-
-useEffect(() => {
-  if (auth && auth.token)
-    navigate('/');
-}, [auth, navigate]);
-
-  const handleChangeInput = e => {
-    const { name, value } = e.target;
-    setUserData({ ...userData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await dispatch(login(userData));
-      navigate('/')
-    } catch (error) {
-      console.log("Error logging in:", error);
-    }
-  };
+    // Initial state for user data
+    const initialState = { email: '', password: '' };
+  
+    // Create a state variable for user data
+    const [userData, setUserData] = useState(initialState);
+    
+    // Destructure the fields from userData
+    const { email, password } = userData;
+  
+    // Initialize useDispatch hook and Navigate
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    
+    // Extract auth state using useSelector hook
+    const { auth } = useSelector(state => state.auth);
+  
+    // UseEffect hook to navigate to home if user is already authenticated
+    useEffect(() => {
+      if (auth && auth.token)
+        navigate('/');
+    }, [auth, navigate]);
+  
+    // Handles on change event for the input fields
+    const handleChangeInput = e => {
+      const { name, value } = e.target;
+      // Update the state with new value
+      setUserData({ ...userData, [name]: value });
+    };
+  
+    // Handle form submit
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        // Dispatch login action
+        await dispatch(login(userData));
+        
+        // If login is successful, navigate to home page
+        navigate('/')
+      } catch (error) {
+        // Log error if there was a problem logging in
+        console.log("Error logging in:", error);
+      }
+    };
   return (
     <div className='bg-loginBg w-full h-screen bg-no-repeat bg-cover'>
       <section>

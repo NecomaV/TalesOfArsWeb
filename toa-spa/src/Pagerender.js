@@ -1,33 +1,31 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import NotFound from './comps/NotFound'
+import React from 'react';
+import { useParams } from 'react-router-dom'; // useParams is a hook for getting the current URL parameters
+import NotFound from './comps/NotFound'; // Importing the NotFound component to display when no matching page is found.
 
 function Pagerender() {
 
+    // Function to dynamically generate page based on URL parameters.
     const generatePage = (page) => {
-        const component = () => require(`./pages/${page}`).default
+        // Dynamically import the requested page using the `require` function.
+        const component = () => require(`./pages/${page}`).default;
 
         try {
-            return React.createElement(component())
+            // If the page exists, create and return the component.
+            return React.createElement(component());
         } catch (err) {
-            return <NotFound />
+            // If an error occurs (like the page not existing), return the NotFound component.
+            return <NotFound />;
         }
     }
 
-    console.log(useParams())
+    // Use the useParams hook from react-router to get the dynamic part of the URL.
+    const { page, id } = useParams();
 
-    const {page,id} = useParams()
+    // Construct the name of the requested page
+    let pageNum = id ? `${page}/${id}` : `${page}`;
 
-    let pageNum = ''
-
-    if (id){
-        pageNum = `${page}/${id}`
-    }
-    else{
-        pageNum = `${page}`
-    }
-
-  return generatePage(pageNum)
+    // Call our generatePage function with the page number and render the returned component.
+    return generatePage(pageNum);
 }
 
-export default Pagerender
+export default Pagerender;
