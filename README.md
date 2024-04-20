@@ -78,9 +78,5 @@ This project follows WCAG guidelines for accessibility. Our aim was to make this
 
 Casablanca team
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
 
 
