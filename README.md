@@ -78,5 +78,12 @@ This project follows WCAG guidelines for accessibility. Our aim was to make this
 
 Casablanca team
 
+Assanov Gabit 200103002
+
+Zhangirkhan Kaniev 200103100
+
+Issadyk Aigerim 200103032
+
+Beken Temirlan 200103535
 
 
