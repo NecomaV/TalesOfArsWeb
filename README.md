@@ -68,8 +68,6 @@ Before running the server, ensure to define the required environment variables i
 
 Remember to replace placeholder lines like 'Details about client-side code.' with the actual details of your project setup and file structure.
 
-Did you know that UserWay's AI-Powered Accessibility Widget can make these fixes on your site automatically? Get it from here now: [UserWay.org/get](https://userway.org/get).
-
 ## Accessibility
 
 This project follows WCAG guidelines for accessibility. Our aim was to make this gaming application as inclusive as possible.
