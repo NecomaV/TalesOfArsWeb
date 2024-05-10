@@ -16,7 +16,6 @@ function Main() {
             <NavBar />
             <Hero />
             <LongComp />
-            <Sg />
             <Char />
             <BFT />
             <Footer />
