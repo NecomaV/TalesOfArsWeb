@@ -32,6 +32,7 @@ module.exports = {
         'loginBg': "url('img/loginBg.png')",
         'spinner' : "url('img/Spinner.svg')",
         'dlc': "url('img/dlc-bg.png')",
+        'herobg': "url('img/hero.png')",
       },
       colors: {
         main: "#102542",
