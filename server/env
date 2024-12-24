@@ -1,4 +1,0 @@
-MONGODB_URL=mongodb+srv://tima24:tima24@clusterdata.qqzjmiv.mongodb.net/?retryWrites=true&w=majority&appName=Clusterdata
-
-ACCESS_TOKEN_SECRET=secretacc
-REFRESH_TOKEN_SECRET=secretrefcd
