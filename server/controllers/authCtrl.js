@@ -11,6 +11,10 @@ const authCtrl = {
             // Extracting user details from request
             const { fullname, username, email, password, gender } = req.body
 
+            if (!fullname || !username || !email || !password) {
+                return res.status(400).json({msg: "Please fill in all required fields."})
+            }
+
             // Formatting username
             let newUserName = username.toLowerCase().replace(/ /g, '')
 
@@ -74,7 +78,6 @@ const authCtrl = {
 
             // Check if user with provided email exists
             const user = await Users.findOne({email})
-            .populate("username fullname")
 
             // If user doesn't exist, return error
             if(!user) {
@@ -143,7 +146,6 @@ const authCtrl = {
 
                 // If valid, find the corresponding user
                 const user = await Users.findById(result.id).select("-password")
-                .populate('username fullname')
                 
                 // If user with the id from the refresh token does not exist, ask to login
                 if(!user) return res.status(400).json({msg: "This does not exist."})

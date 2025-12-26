@@ -16,6 +16,9 @@ app.use(express.json()); // To parse JSON data from requests
 app.use(cors()); // Enable CORS on server
 app.use(cookieParser()); // Enable cookie parser
 
+// Use the authentication routes for the /api endpoint
+app.use('/api', require('./routes/authRouter'));
+
 // Define static files path
 const buildPath = path.resolve(__dirname, '../toa-spa/build');
 app.use(express.static(buildPath));
@@ -32,9 +35,6 @@ app.get('*', (req, res) => {
     }
   );
 });
-
-// Use the authentication routes for the /api endpoint
-app.use('/api', require('./routes/authRouter'));
 
 // Get DB Connection string from environment variables
 const URI = process.env.MONGODB_URI;

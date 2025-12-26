@@ -1,8 +1,12 @@
 import { TYPES } from "../actions/notifyAction";
 
-const initalState = {}
+const initialState = {
+    loading: false,
+    error: null,
+    success: null
+}
 
-const notifyReducer = (state = {initalState}, action) => {
+const notifyReducer = (state = initialState, action) => {
     switch(action.type){
         case TYPES.NOTIFY:
             return action.payload

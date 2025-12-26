@@ -24,7 +24,7 @@ function Login() {
     const navigate = useNavigate();
     
     // Extract auth state using useSelector hook
-    const { auth } = useSelector(state => state.auth);
+    const auth = useSelector(state => state.auth);
   
     // UseEffect hook to navigate to home if user is already authenticated
     useEffect(() => {

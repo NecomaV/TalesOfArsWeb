@@ -1,8 +1,11 @@
 import { TYPES } from "../actions/authAction";
 
-const initalState = {}
+const initialState = {
+    token: null,
+    user: null
+};
 
-const authReducer = (state = {initalState}, action) => {
+const authReducer = (state = initialState, action) => {
     switch(action.type){
         case TYPES.AUTH:
             return action.payload
