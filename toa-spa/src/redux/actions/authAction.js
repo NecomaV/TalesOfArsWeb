@@ -1,5 +1,6 @@
 import { postDataAPI } from "../../utils/fetchData"
 import axios from 'axios'
+import { TYPES as NOTIFY_TYPES } from "./notifyAction";
 
 // Define a types constant holding action types
 export const TYPES = {
@@ -27,7 +28,7 @@ export const login = (data) => async (dispatch) => {
   } catch (err) {
     // Dispatch notification of error message if any
     dispatch({
-      type: "NOTIFY",
+      type: NOTIFY_TYPES.NOTIFY,
       payload: {
         error: err.response.data.msg,
       },
@@ -43,7 +44,7 @@ export const logout = () => async (dispatch) => {
 
   // Dispatch corresponding action with nullified user data
   dispatch({
-    type: "AUTH",
+    type: TYPES.AUTH,
     payload: {
       token: null,
       user: null,
@@ -55,7 +56,7 @@ export const logout = () => async (dispatch) => {
 
   // Dispatch notification of successful logout if any
   dispatch({
-    type: "NOTIFY",
+    type: NOTIFY_TYPES.NOTIFY,
     payload: {
       success: res.data.msg
     },
@@ -65,14 +66,14 @@ export const logout = () => async (dispatch) => {
 
 // Define action for register
 export const register = (data) => async (dispatch) => {
-  dispatch({ type: 'NOTIFY', payload: { loading: true } });
+  dispatch({ type: NOTIFY_TYPES.NOTIFY, payload: { loading: true } });
 
   try {
     const res = await postDataAPI('register', data);
       
     if (res.status >= 200 && res.status < 300) {
       dispatch({
-        type: "AUTH",
+        type: TYPES.AUTH,
         payload: {
           token: res.data.access_token,
           user: res.data.user
@@ -83,7 +84,7 @@ export const register = (data) => async (dispatch) => {
       localStorage.setItem('user', JSON.stringify(res.data.user)); 
 
       dispatch({
-        type: "NOTIFY",
+        type: NOTIFY_TYPES.NOTIFY,
         payload: {
           success: res.data.msg
         }
@@ -93,7 +94,7 @@ export const register = (data) => async (dispatch) => {
 
     } else {
       dispatch({
-        type: 'NOTIFY',
+        type: NOTIFY_TYPES.NOTIFY,
         payload: {
           error: res.data.msg
         }
@@ -104,7 +105,7 @@ export const register = (data) => async (dispatch) => {
 
   } catch (error) { 
       dispatch({
-        type: 'NOTIFY',
+        type: NOTIFY_TYPES.NOTIFY,
         payload: {
           error: 'An unexpected error occurred. Please try again.'
       }});
@@ -118,14 +119,18 @@ export const refreshToken = () => async (dispatch) => {
   const firstLogin = localStorage.getItem('firstLogin');
 
   if (firstLogin) {
-    const res = await axios.post(`/api/refresh_token`);
-    const user = JSON.parse(localStorage.getItem('user'));
-    dispatch({ 
-      type: TYPES.AUTH,
-      payload: {
-        token: res.data.access_token,
-        user: user, 
-      },
-    });
+    try {
+      const res = await axios.post(`/api/refresh_token`);
+      dispatch({ 
+        type: TYPES.AUTH,
+        payload: {
+          token: res.data.access_token,
+          user: res.data.user, 
+        },
+      });
+      localStorage.setItem('user', JSON.stringify(res.data.user));
+    } catch (error) {
+      localStorage.removeItem('firstLogin');
+    }
   }
 };
